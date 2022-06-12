@@ -26,7 +26,15 @@
     </table>
 </div>
 
-
+<div> 
+<div>
+<form action="" method="POST"> 
+    <label>Project Name</label>
+    <input type="text" name="projectName" required><br>
+  <br><input type="submit" name="Add_project" value="Add">
+</form>
+</div>
+</div>
 
     
 </section>

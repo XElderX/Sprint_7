@@ -27,7 +27,51 @@ if(isset($_GET['action']) and $_GET['action'] == 'project_delete'){
     header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
     die();
 }
+//add personell logic 
+If(isset($_POST['Add_personell'])){
+    $p_name = $_POST['First_name'];
+    $p_nameL = $_POST['Last_name'];
+    $p_project = $_POST['projectList'];
+    $sql = "INSERT INTO personell
+    (First_name, Last_name, project_id)
+    VALUES ('$p_name', '$p_nameL' , $p_project )";
 
+    if (mysqli_query($connection, $sql)){
+        echo "done";
+    } else {
+        echo "Error: " . "<br>" . mysqli_error($connection);
+    };
+
+}
+//add project logic
+If(isset($_POST['Add_project'])){
+    $project_name = $_POST['projectName'];
+    $sql = "INSERT INTO projects
+    (Project_name)
+    VALUES ('$project_name')";
+
+    if (mysqli_query($connection, $sql)){
+        echo "done";
+    } else {
+        echo "Error: " . "<br>" . mysqli_error($connection);
+    };
+
+}
+
+//function for project selection options
+function selectProject($connection){
+    $sql="SELECT project_id, project_name
+    FROM projects";
+    $result = mysqli_query($connection, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            print ("<option value='" . $row['project_id'] . "'" . ">" . $row['project_name'] .  "</option>");
+        }
+    } else {
+        echo "none";
+    }
+
+}
 //function for personell data render
 function personell($connection){
     $sql = "SELECT

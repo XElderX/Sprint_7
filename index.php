@@ -26,7 +26,21 @@
         
     </table>
 </div>
-
+<div> 
+<div>
+<form action="" method="POST"> 
+    <label>Name</label>
+    <input type="text" name="First_name" required><br>
+    <label>Last Name</label>
+    <input type="text" name="Last_name" required><br>
+    <select name="projectList"><br>
+  <option value="NULL">--Please select project--></option>
+  <?php selectProject($connection) ?>
+</select>
+  <br><input type="submit" name="Add_personell" value="Add">
+</form>
+</div>
+</div>
 
    
 </section>
