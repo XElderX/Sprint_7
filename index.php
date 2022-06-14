@@ -27,7 +27,7 @@
     </table>
 </div>
 <div> 
-<div>
+<div id="add_person" style="display:none;">
 <form action="" method="POST"> 
     <label>Name</label>
     <input type="text" name="First_name" required><br>
@@ -40,7 +40,26 @@
   <br><input type="submit" name="Add_personell" value="Add">
 </form>
 </div>
+<input id="NewPersonOn" type="button"  value="New Person" onclick="showAdd()" />
+<input id="NewPersonOff" style="display:none" type="button"  value="Hide" onclick="hideAdd()" />
 </div>
+
+
+<script> 
+function showAdd() {
+   document.getElementById('add_person').style.display = "block";
+   document.getElementById('NewPersonOff').style.display = "block";
+   document.getElementById('NewPersonOn').style.display = "none";
+}
+function hideAdd() {
+   document.getElementById('add_person').style.display = "none";
+   document.getElementById('NewPersonOn').style.display = "block";
+   document.getElementById('NewPersonOff').style.display = "none";
+}
+</script>
+
+
+
 
    
 </section>
