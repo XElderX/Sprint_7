@@ -20,7 +20,7 @@
 <div class="tableContainer projects">
 <div><?php echo "<p style='color:#a7fc00'>  $connStatus </p>" ?> </div>
 <h2>Project manager</h2>
-<div class="tableScroll">
+<div class='tableBox'>
     <table class='table'>
        <?php project($connection) ?>    
     </table>

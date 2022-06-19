@@ -30,6 +30,9 @@ If(isset($_POST['Add_personell'])){
     $p_name = $_POST['First_name'];
     $p_nameL = $_POST['Last_name'];
     $p_project = $_POST['projectList'];
+    var_dump($p_project);
+    (!$p_project) ? $p_project = NULL : null;
+    var_dump($p_project);
     $sql = "INSERT INTO personell
     (First_name, Last_name, project_id)
     VALUES (?, ? , ? )";
@@ -137,7 +140,7 @@ function personell($connection){
     ON projects.Project_id = personell.Project_id
     ORDER BY id ";
 $result = mysqli_query($connection, $sql);
-echo "<br><tr><th>No.</th><th>Name</th><th>Last name</th><th>Projects</th><th>Actions</th></tr>";
+echo "<tr><th>No.</th><th>Name</th><th>Last name</th><th>Projects</th><th>Actions</th></tr>";
 
 if (mysqli_num_rows($result) > 0) {
     $personellCount = 0 ;
@@ -150,14 +153,12 @@ if (mysqli_num_rows($result) > 0) {
             <td>" . "<input class='editInput' type='text' name='lastName' required value='" . $row['Last_name'] . "'>" ."</td>
             <td>" . "<select class='editInput'  name='projectList'>" . "<option value=" . $row['Project_id'] .">" . $row['Project_name'] . "</option>" .
              selectProject($connection) . "</select>" . "</td>
-           <td>" . "<div class='btn-container'><input type='submit' class='btn-green' name='update_personell' value='Save'></div>" . "</td></tr></form> <br>");
+           <td>" . "<div class='btn-container'><input type='submit' class='btn-green' name='update_personell' value='Save'></div>" . "</td></tr></form> ");
              continue;
         }
         $personellCount++;
-        echo ("<tr><td>" . $personellCount . "</td><td> ". $row['First_name'] . "</td> <td>" . $row['Last_name'] . "</td><td>" . $row['Project_name'] . "</td><td>" ."<div class='btn-container'><button class='btn-red'>" . '<a href="?action=delete&id=' . $row['id'] . '">Delete</a></button>' . "<button class='btn-green'>" . '<a href="?action=personell_update&update_id=' . $row['id'] . '">Edit</a></button></div>' . "</td></tr> <br>");
+        echo ("<tr><td>" . $personellCount . "</td><td> ". $row['First_name'] . "</td> <td>" . $row['Last_name'] . "</td><td>" . $row['Project_name'] . "</td><td>" ."<div class='btn-container'><button class='btn-red'>" . '<a href="?action=delete&id=' . $row['id'] . '">Delete</a></button>' . "<button class='btn-green'>" . '<a href="?action=personell_update&update_id=' . $row['id'] . '">Edit</a></button></div>' . "</td></tr> ");
     }
-} else {
-    echo "0 results";
 }
 
 }
@@ -172,7 +173,7 @@ function project($connection){
     ORDER BY Project_id;
 ";
 $result = mysqli_query($connection, $sql);
-echo "<br><tr><th>No.</th><th>Project</th><th>Assigned Employee(s)</th><th>Actions</th></tr>";
+echo "<tr><th>No.</th><th>Project</th><th>Assigned Employee(s)</th><th>Actions</th></tr>";
 
 if (mysqli_num_rows($result) > 0) {
     $projectsCount= 0 ;
@@ -183,16 +184,14 @@ if (mysqli_num_rows($result) > 0) {
             <td>" . $projectsCount . "<input type='hidden' name='_p_id' required value='" . $row['Project_id'] . "'>" . "</td>
             <td>" . "<input class='editInput' type='text' name='projectName' required value='" . $row['Project_name'] . "'>" . "</td>
             <td>" . $row['assigned'] . "</td>
-            <td>" . "<div class='btn-container'><input type='submit' class='btn-green' name='update_project' value='Save'></div>" . "</td></tr></form><br>");
+            <td>" . "<div class='btn-container'><input type='submit' class='btn-green' name='update_project' value='Save'></div>" . "</td></tr></form>");
             continue;
 
         }
         $projectsCount++;
         echo ("<tr><td>" . $projectsCount . "</td><td>" . $row['Project_name'] .
-          "</td><td>". $row['assigned'] . "</td><td>" ."<div class='btn-container'><button class='btn-red'>" . '<a href="?action=project_delete&Project_id=' . $row['Project_id'] . '">Delete</a></button>' . "<button class='btn-green'>" . '<a href="?action=project_update&Project_idx=' . $row['Project_id'] . '">Edit</a></button></div>' . "</td></tr> <br>");
+          "</td><td>". $row['assigned'] . "</td><td>" ."<div class='btn-container'><button class='btn-red'>" . '<a href="?action=project_delete&Project_id=' . $row['Project_id'] . '">Delete</a></button>' . "<button class='btn-green'>" . '<a href="?action=project_update&Project_idx=' . $row['Project_id'] . '">Edit</a></button></div>' . "</td></tr>");
     }
-} else {
-    echo "0 results";
 }
 }
 

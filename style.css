@@ -1,15 +1,33 @@
+body{
+  background-color: #2f4f4f;
+}
+.tableBox{
+  height:50vh;
+  background-color:#e2e2e282;
+	overflow-y:scroll;
+}
+.tableBox::-webkit-scrollbar {
+  width: 15px;
+  background-color:#c4aead;
+}
 
+.tableBox::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+.tableBox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
 table  {
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
   background-color:lightgrey;
   width: -webkit-fill-available;
-  
 }
 .personell table td:nth-child(1), .personell table th:nth-child(1) {
     width:calc(5%);
     text-align: center;
-   
   }
   .personell table td:nth-child(2), .personell table th:nth-child(2) {
     width:calc(30%);
@@ -64,7 +82,6 @@ table  {
     width:calc(15%);
     text-align: center;
   }
-  
 
   .projects table th:nth-child(3){
     padding: 0 3rem 0 4rem;
@@ -103,9 +120,7 @@ table  {
     font-style: normal;
     font-variant: small-caps;
     text-transform: capitalize;
-    
   }
-
   .navContainer{
       display:flex;
       width: 100%;
@@ -119,18 +134,17 @@ table  {
       border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
   .navButton {
-    
     background: linear-gradient(322deg, rgba(251,207,246,1) 13%, rgba(184,218,222,1) 23%, rgba(132,138,29,0.8575805322128851) 44%, rgba(36,0,0,0.9360119047619048) 59%, rgba(0,159,255,0.8799894957983193) 76%);
     margin:auto;   
-      border-radius: 4px;
-      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
-      font-size: 20px;
-      color: white;
-      cursor: pointer;
+    border-radius: 4px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
       
-      transition: background-position .7s,box-shadow .4s;
-      background-size: 110%;
-      font-family: 'Oswald', sans-serif;
+    transition: background-position .7s,box-shadow .4s;
+    background-size: 110%;
+    font-family: 'Oswald', sans-serif;
   }
   .navButton:hover{
     background-position: 70% 80%;
@@ -143,7 +157,6 @@ table  {
     font-size: 2rem;
     color:gold;
     width: 100px;
-   
     }
     
   .btn-green {

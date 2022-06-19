@@ -20,10 +20,12 @@
 <div class="tableContainer personell">
 <div><?php echo "<p style='color:#a7fc00'>  $connStatus </p>" ?> </div>
   <h2>Project manager</h2>
-    <table class='table'>
+    <div class='tableBox'>
+      <table class='table'>
        <?php personell($connection);
        ?>
     </table>
+  </div>
 </div>
 <div class='formContainer'> 
 <div>
@@ -40,7 +42,7 @@
     <label>Last Name</label>
     <input class='inputField' type="text" name="Last_name" required><br>
     <select class='select' name="projectList"><br>
-  <option value="NULL">--Please select project--></option>
+  <option value=''>--Please select project--></option>
   <?php selectProject($connection) ?>
 </select>
   <input class='btn-add' type="submit" name="Add_personell" value="Add">
