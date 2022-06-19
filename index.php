@@ -1,4 +1,4 @@
-<?php require 'sql/logic.php';
+<?php require 'model/logic.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
