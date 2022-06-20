@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -30,8 +30,18 @@ CREATE TABLE `personell` (
   PRIMARY KEY (`id`),
   KEY `project_idx` (`Project_id`),
   CONSTRAINT `personell_ibfk_1` FOREIGN KEY (`Project_id`) REFERENCES `projects` (`Project_id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `personell`
+--
+
+LOCK TABLES `personell` WRITE;
+/*!40000 ALTER TABLE `personell` DISABLE KEYS */;
+INSERT INTO `personell` VALUES (1,'Robinas','Taiklusis',NULL),(2,'Jonas','Jonaitis',3),(3,'Garikas','Klepciukas',5),(4,'Klaudija','Vaidulute',6),(5,'Antanas','Kelmas',NULL),(6,'Ona','Oniene',NULL);
+/*!40000 ALTER TABLE `personell` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `projects`
@@ -45,8 +55,18 @@ CREATE TABLE `projects` (
   `Project_name` varchar(30) NOT NULL,
   PRIMARY KEY (`Project_id`),
   UNIQUE KEY `Project_name` (`Project_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `projects`
+--
+
+LOCK TABLES `projects` WRITE;
+/*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES (1,'HTML/CSS kursas'),(7,'Java kursas'),(2,'Javascript kursas'),(4,'Multimedija'),(5,'PHP kursas'),(3,'React kursas'),(6,'Rust kursas');
+/*!40000 ALTER TABLE `projects` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -57,4 +77,4 @@ CREATE TABLE `projects` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-19 15:47:53
+-- Dump completed on 2022-06-20 12:52:41
