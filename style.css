@@ -281,6 +281,7 @@ h2 {
 .btn-add,
 #NewPersonOn,
 #NewProjectOn {
+  margin-top: 0.5rem;
   background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
   background-color: #63b8ee;
   border-radius: 6px;
@@ -336,7 +337,8 @@ h2 {
 
 #add_person,
 #add_project {
-  background-color: #c4aead
+  background-color: #c4aead;
+  max-width:100%;
 }
 
 .formContainer {
@@ -360,8 +362,10 @@ h2 {
 }
 
 .projectForm {
-  margin: 1rem;
-  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5%;
+  padding: 5%;
   background: rgba(248, 231, 28, 0.05);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(18.5px);
@@ -378,9 +382,9 @@ h2 {
 
 .personellForm {
   display: flex;
-  justify-content: center;
-  margin: 1rem;
-  padding: 0.5rem;
+  flex-wrap: wrap;
+  margin: 2%;
+  padding: 1.5rem;
   background: rgba(146, 104, 182, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5.5px);
@@ -393,15 +397,16 @@ h2 {
   font-weight: bold;
   font-size: 1.2em;
   align-self: flex-end;
-  padding: 0 1rem 0.5rem 1rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
 
 }
 
 .inputField {
+  
   color: white;
   background: rgba(201, 187, 213, 0.597);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  padding: 0.5rem;
+  padding: 1%;
   backdrop-filter: blur(12.5px);
   -webkit-backdrop-filter: blur(12.5px);
   border-radius: 10px;

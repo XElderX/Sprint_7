@@ -52,7 +52,7 @@
             <option value=''>--Please select project--></option>
             <?php selectProject($connection) ?>
           </select>
-          <input class='btn-add' type="submit" name="Add_personell" value="Add">
+          <input class='btn-add' style='float:right' type="submit" name="Add_personell" value="Add">
         </form>
       </div>
     </div>
